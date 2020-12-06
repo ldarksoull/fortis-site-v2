@@ -108,12 +108,12 @@
             <img class="menu-link-lk-icon" src="/images/lk.png" alt="">
           </a>
         </nav>
-        <div class="girl animate__animated" v-animate="{value: 'animate__fadeIn', delay: homePageDelay }"></div>
+        <div class="girl animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }"></div>
         <h1 class="name">
-          <p class="name-main animate__animated" v-animate="{value: 'animate__fadeIn', delay: homePageDelay }">FORTIS</p>
-          <p class="name-main name-main--blured animate__animated" v-animate="{value: 'animate__pulse', delay: homePageDelay }">FORTIS</p>
-          <p class="name-sub animate__animated" v-animate="{value: 'animate__fadeIn', delay: homePageDelay }">ROLEPLAY</p>
-          <p class="name-stroked animate__animated" v-animate="{value: 'animate__fadeIn', delay: homePageDelay }">FORTIS</p>
+          <p class="name-main animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }">FORTIS</p>
+          <p class="name-main name-main--blured animate__animated" v-animate="{value: 'animate__pulse', delay: 400 }">FORTIS</p>
+          <p class="name-sub animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }">ROLEPLAY</p>
+          <p class="name-stroked animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }">FORTIS</p>
         </h1>
         
         <div class="left-top">
@@ -136,11 +136,11 @@
           </div>
         </div>
         <nav class="buttons">
-          <a href="#" @click="moveTo(2)" class="main-btn animate__animated" v-animate="{value: 'animate__fadeInUp', delay: homePageDelay }">Начать играть</a>
-          <a href="https://vk.com/fortisrp" class="social-btn social-btn-1 animate__animated" v-animate="{value: 'animate__fadeIn', delay: homePageDelay }"></a>
-          <a href="https://www.twitch.tv/fortis_role_play" class="social-btn social-btn-2 animate__animated" v-animate="{value: 'animate__fadeIn', delay: homePageDelay }"></a>
-          <a href="https://www.youtube.com/channel/UCXbi1k6SD4CTkQv7RYesSXg" class="social-btn social-btn-3 animate__animated" v-animate="{value: 'animate__fadeIn', delay: homePageDelay }"></a>
-          <a href="https://discord.gg/6C9nZDt" class="social-btn social-btn-4 animate__animated" v-animate="{value: 'animate__fadeIn', delay: homePageDelay }"></a>
+          <a href="#" @click="moveTo(2)" class="main-btn animate__animated" v-animate="{value: 'animate__fadeInUp', delay: 400 }">Начать играть</a>
+          <a href="https://vk.com/fortisrp" class="social-btn social-btn-1 animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }"></a>
+          <a href="https://www.twitch.tv/fortis_role_play" class="social-btn social-btn-2 animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }"></a>
+          <a href="https://www.youtube.com/channel/UCXbi1k6SD4CTkQv7RYesSXg" class="social-btn social-btn-3 animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }"></a>
+          <a href="https://discord.gg/6C9nZDt" class="social-btn social-btn-4 animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }"></a>
         </nav>
         <div class="monitoring">
           <div class="monitoring-title">Мониторинг</div>
@@ -279,7 +279,6 @@ export default {
         openModal: false,
         hasError: false,
         load: true,
-        homePageDelay: 2400,
         curIndex: 0,
         playersOnline: 0,
         serverIp: 'fortis-rp.ru:22005',
@@ -289,8 +288,6 @@ export default {
           duration: 500,
           afterChange: (currentSlideEl, currentIndex) => {
             this.curIndex = currentIndex
-            this.homePageDelay = 0
-            console.log(this.homePageDelay)
           },
         }
       }
