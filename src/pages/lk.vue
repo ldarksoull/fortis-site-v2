@@ -44,11 +44,11 @@
         </div>
       </div>
       <div class="block actions">
-        <div class="actions-btn lk-btn">
+        <div class="actions-btn lk-btn" @click="openModal(1)">
           Денежный лог
         </div>
-        <div class="actions-btn lk-btn">
-          Лог входа/выхода
+        <div class="actions-btn lk-btn" @click="openModal(2)">
+          Лог входа
         </div>
       </div>
       <section class="block block-bg quests">
@@ -267,6 +267,104 @@
         </ul>
       </section>
     </div>
+    <transition name="fade">
+    <div class="modal-overlay" v-if="modal != null" @click="closeModal()"></div>
+    </transition>
+    <transition name="fade">
+    <div class="modal lk-modal moneyLog" v-if="modal === 1">
+      <div class="modal-close" @click="closeModal()"></div>
+      <div class="modal-title">Денежный лог</div>
+      <div class="modal-body">
+        <div class="table-head">
+          <div class="table-col">Номер</div>
+          <div class="table-col" :class="{ fixOffset: scrollbar }">Тип операции</div>
+          <div class="table-col" :class="{ fixOffset: scrollbar }">Сумма</div>
+          <div class="table-col" :class="{ fixOffset: scrollbar }">Дата, время</div>
+        </div>
+        <div class="table-body" ref="tableBody">
+          <div class="table-row">
+            <div class="table-col">35</div>
+            <div class="table-col">Lorem ipsum dolor
+              Lorem ipsum dolor</div>
+            <div class="table-col" :class="{ 'color-green': money = 'plus', 'color-red': money = 'minus' }">-50000</div>
+            <div class="table-col">06.12.2020, 16:00</div>
+          </div>
+          <div class="table-row">
+            <div class="table-col">35</div>
+            <div class="table-col">Lorem ipsum dolor
+              Lorem ipsum dolor</div>
+            <div class="table-col color-green">+50000</div>
+            <div class="table-col">06.12.2020, 16:00</div>
+          </div>
+          <div class="table-row">
+            <div class="table-col">35</div>
+            <div class="table-col">Lorem ipsum dolor
+              Lorem ipsum dolor</div>
+            <div class="table-col color-green">+50000</div>
+            <div class="table-col">06.12.2020, 16:00</div>
+          </div>
+          <div class="table-row">
+            <div class="table-col">35</div>
+            <div class="table-col">Lorem ipsum dolor
+              Lorem ipsum dolor</div>
+            <div class="table-col color-green">+50000</div>
+            <div class="table-col">06.12.2020, 16:00</div>
+          </div>
+          <div class="table-row">
+            <div class="table-col">35</div>
+            <div class="table-col">Lorem ipsum dolor
+              Lorem ipsum dolor</div>
+            <div class="table-col color-green">+50000</div>
+            <div class="table-col">06.12.2020, 16:00</div>
+          </div>
+          <div class="table-row">
+            <div class="table-col">35</div>
+            <div class="table-col">Lorem ipsum dolor
+              Lorem ipsum dolor</div>
+            <div class="table-col color-green">+50000</div>
+            <div class="table-col">06.12.2020, 16:00</div>
+          </div>
+          <div class="table-row">
+            <div class="table-col">35</div>
+            <div class="table-col">Lorem ipsum dolor
+              Lorem ipsum dolor</div>
+            <div class="table-col color-green">+50000</div>
+            <div class="table-col">06.12.2020, 16:00</div>
+          </div>
+          <div class="table-row">
+            <div class="table-col">35</div>
+            <div class="table-col">Lorem ipsum dolor
+              Lorem ipsum dolor</div>
+            <div class="table-col color-green">+50000</div>
+            <div class="table-col">06.12.2020, 16:00</div>
+          </div>
+          <div class="table-row">
+            <div class="table-col">35</div>
+            <div class="table-col">Lorem ipsum dolor
+              Lorem ipsum dolor</div>
+            <div class="table-col color-green">+50000</div>
+            <div class="table-col">06.12.2020, 16:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal lk-modal enterLog" v-if="modal === 2">
+      <div class="modal-close" @click="closeModal()"></div>
+      <div class="modal-title">Лог входа</div>
+      <div class="modal-body">
+        <div class="table-head">
+          <div class="table-col">Номер</div>
+          <div class="table-col" :class="{ fixOffset: scrollbar }">Дата, время</div>
+        </div>
+        <div class="table-body" ref="tableBody">
+          <div class="table-row">
+            <div class="table-col">35</div>
+            <div class="table-col">06.12.2020, 16:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </transition>
   </div>
 </template>
 <script>
@@ -295,15 +393,40 @@ export default {
       carSlot3: 'Bravado Buffalo',
       carSlot4: null,
       carSlot5: null,
-      carSlot6: null
+      carSlot6: null,
+      modal: null,
+      money: 'plus',
+      scrollbar: false
     }
+  },
+  mounted(){
+    this.fixOffset()
+    console.log(this.$refs.tableBody);
   },
   methods:{
     exit(){
       this.$router.back()
       console.log('exit')
+    },
+    openModal(e){
+      if (e === 1) this.modal = 1;
+      if (e === 2) this.modal = 2;
+      document.documentElement.style.position = 'fixed'
+      document.documentElement.style.overflow = 'hidden'
+      setTimeout(() => {
+        this.fixOffset()
+      }, 0);
+    },
+    closeModal(){
+      this.modal = null
+      document.documentElement.style.position = 'static'
+      document.documentElement.style.overflow = 'auto'
+    },
+    fixOffset(){
+      if(this.$refs.tableBody.scrollHeight > this.$refs.tableBody.clientHeight){
+        this.scrollbar = true
+      }
     }
-  }
-  
+  },
 }
 </script>

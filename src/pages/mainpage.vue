@@ -18,12 +18,12 @@
             <div class="modal-content">
               <form class="modal-form mb" @submit.prevent="">
                 <div class="modal-input-wrap mb">
-                  <input type="text" class="modal-input" placeholder="Введите ваш логин">
+                  <input type="text" class="modal-input" @input="hasError = !hasError" placeholder="Введите ваш логин">
                 </div>
                 <div class="modal-input-wrap">
                   <input type="password" class="modal-input" placeholder="Введите ваш пароль">
                 </div>
-                <div class="modal-form-error mb" v-if="hasError">Неверный логин или пароль</div>
+                <div class="modal-form-error" v-if="hasError">Неверный логин или пароль</div>
                 <a href="#" @click="modalPage = 'recovery'"  class="modal-link">Забыли пароль?</a>
                 <router-link to="/lk" class="modal-btn">Войти</router-link>
               </form>
@@ -39,16 +39,16 @@
             <div class="modal-content">
               <form class="modal-form mb" @submit.prevent="">
                 <div class="modal-input-wrap mb">
-                  <input type="text" class="modal-input" placeholder="Логин">
+                  <input type="text" class="modal-input" @input="hasError = !hasError" placeholder="Логин">
                 </div>
                 <div class="modal-input-wrap mb">
                   <input type="password" class="modal-input" placeholder="Пароль">
                 </div>
-                <div class="modal-input-wrap mb">
+                <div class="modal-input-wrap">
                   <input type="password" class="modal-input" placeholder="Повторите пароль">
                 </div>
                 <div class="modal-form-error mb" v-if="hasError">Пароли не совпадают</div>
-                <button type="submit" class="modal-btn">Создать аккаунт</button>
+                <button type="submit" class="modal-btn mt">Создать аккаунт</button>
               </form>
             </div>
           </div>
