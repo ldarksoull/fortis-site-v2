@@ -24,7 +24,7 @@
                   <input type="password" class="modal-input" placeholder="Введите ваш пароль">
                 </div>
                 <div class="modal-form-error" v-if="hasError">Неверный логин или пароль</div>
-                <a href="#" @click="modalPage = 'recovery'"  class="modal-link">Забыли пароль?</a>
+                <a href="#" @click="modalPage = 'recovery'" class="modal-link">Забыли пароль?</a>
                 <router-link to="/lk" class="modal-btn">Войти</router-link>
               </form>
               <button type="button" class="modal-btn" @click="modalPage = 'reg'">Регистрация</button>
@@ -33,7 +33,7 @@
           </transition>
           <transition name="fade">
           <div class="modal" v-if="openModal && modalPage === 'reg'">
-            <div href="#" class="modal-close" @click="closeModal()"></div>
+            <div class="modal-close" @click="closeModal()"></div>
             <a class="btn-back modal-back" @click="modalPage = 'login'" href="#">Назад</a>
             <div class="modal-title">РЕГИСТРАЦИЯ</div>
             <div class="modal-content">
@@ -55,7 +55,7 @@
           </transition>
           <transition name="fade">
           <div class="modal" v-if="openModal && modalPage === 'recovery'">
-            <div href="#" class="modal-close" @click="closeModal()"></div>
+            <div class="modal-close" @click="closeModal()"></div>
             <a class="btn-back modal-back" @click="modalPage = 'login'" href="#">Назад</a>
             <div class="modal-title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</div>
             <div class="modal-content">
@@ -70,7 +70,7 @@
           </transition>
           <transition name="fade">
           <div class="modal" v-if="openModal && modalPage === 'newPass'">
-            <div href="#" class="modal-close" @click="closeModal()"></div>
+            <div class="modal-close" @click="closeModal()"></div>
             <a class="btn-back modal-back" @click="modalPage = 'login'" href="#">Назад</a>
             <div class="modal-title">НОВЫЙ ПАРОЛЬ</div>
             <div class="modal-content">
@@ -101,7 +101,7 @@
         </svg>
         <nav class="menu" :class="{ active: activeMenu }">
           <a class="menu-link" @click="moveTo(1)" href="#">О нас</a>
-          <a class="menu-link" href="https://forum.fortisrp.ru/">Форум</a>
+          <a class="menu-link" target="_blank" rel="noopener" href="https://forum.fortisrp.ru/">Форум</a>
           <router-link class="menu-link" to="/donate">Донат</router-link>
           <a class="menu-link menu-link-lk--mob" href="#" @click="showModal(1)">Личный кабинет</a>
           <a class="menu-link-lk" href="#" @click="showModal(1)">
@@ -137,10 +137,10 @@
         </div>
         <nav class="buttons">
           <a href="#" @click="moveTo(2)" class="main-btn animate__animated" v-animate="{value: 'animate__fadeInUp', delay: 400 }">Начать играть</a>
-          <a href="https://vk.com/fortisrp" class="social-btn social-btn-1 animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }"></a>
-          <a href="https://www.twitch.tv/fortis_role_play" class="social-btn social-btn-2 animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }"></a>
-          <a href="https://www.youtube.com/channel/UCXbi1k6SD4CTkQv7RYesSXg" class="social-btn social-btn-3 animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }"></a>
-          <a href="https://discord.gg/6C9nZDt" class="social-btn social-btn-4 animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }"></a>
+          <a href="https://vk.com/fortisrp" target="_blank" rel="noopener" class="social-btn social-btn-1 animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }"></a>
+          <a href="https://www.twitch.tv/fortis_role_play" target="_blank" rel="noopener" class="social-btn social-btn-2 animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }"></a>
+          <a href="https://www.youtube.com/channel/UCXbi1k6SD4CTkQv7RYesSXg" target="_blank" rel="noopener" class="social-btn social-btn-3 animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }"></a>
+          <a href="https://discord.gg/6C9nZDt" target="_blank" rel="noopener" class="social-btn social-btn-4 animate__animated" v-animate="{value: 'animate__fadeIn', delay: 400 }"></a>
         </nav>
         <div class="monitoring">
           <div class="monitoring-title">Мониторинг</div>
@@ -175,12 +175,12 @@
           <div class="howtostart__step animate__animated" v-animate="{value: 'animate__bounceInRight', delay: 0 }">
             <div class="howtostart__step-name">Шаг 1</div>
             <div class="howtostart__step-text">Купить и установить GTA V</div>
-            <a href="https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/" class="howtostart__step-button">Скачать</a>
+            <a target="_blank" rel="noopener" href="https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/" class="howtostart__step-button">Скачать</a>
           </div>
           <div class="howtostart__step howtostart__step-2 animate__animated" v-animate="{value: 'animate__bounceInRight', delay: 300 }">
             <div class="howtostart__step-name">Шаг 2</div>
             <div class="howtostart__step-text">Скачать RAGE MP</div>
-            <a href="https://rage.mp/" target="_blank" class="howtostart__step-button">Скачать</a>
+            <a target="_blank" rel="noopener" href="https://rage.mp/" class="howtostart__step-button">Скачать</a>
           </div>
           <div class="howtostart__step animate__animated" v-animate="{value: 'animate__bounceInRight', delay: 600 }">
             <div class="howtostart__step-name">Шаг 3</div>
@@ -195,19 +195,19 @@
         <h2 class="socials__title animate__animated" v-animate="{value: 'animate__fadeIn', delay: 200 }">НАШИ СОЦИАЛЬНЫЕ СЕТИ</h2>
         <div class="social__items" >
           <div class="socials__block socials__block-1 animate__animated" v-animate="{value: 'animate__slideInUp', delay: 0 }">
-            <a href="https://vk.com/fortisrp" class="socials__circle-link socials__circle-link-1"></a>
+            <a href="https://vk.com/fortisrp" target="_blank" rel="noopener" class="socials__circle-link socials__circle-link-1"></a>
             <div class="socials__text">Самые свежие новости проекта!</div>
           </div>
           <div class="socials__block socials__block-2 animate__animated" v-animate="{value: 'animate__slideInUp', delay: 400 }">
-            <a href="https://www.twitch.tv/fortis_role_play" class="socials__circle-link socials__circle-link-2"></a>
+            <a href="https://www.twitch.tv/fortis_role_play" target="_blank" rel="noopener" class="socials__circle-link socials__circle-link-2"></a>
             <div class="socials__text">Прямые трансляции, где вы можете задать любой вопрос!</div>
           </div>
           <div class="socials__block socials__block-3 animate__animated" v-animate="{value: 'animate__slideInUp', delay: 800 }">
-            <a href="https://www.youtube.com/channel/UCXbi1k6SD4CTkQv7RYesSXg" class="socials__circle-link socials__circle-link-3"></a>
+            <a href="https://www.youtube.com/channel/UCXbi1k6SD4CTkQv7RYesSXg" target="_blank" rel="noopener" class="socials__circle-link socials__circle-link-3"></a>
             <div class="socials__text">Все видеоматериалы о сервере!</div>
           </div>
           <div class="socials__block socials__block-4 animate__animated" v-animate="{value: 'animate__slideInUp', delay: 1200 }">
-            <a href="https://discord.gg/6C9nZDt" class="socials__circle-link socials__circle-link-4"></a>
+            <a href="https://discord.gg/6C9nZDt" target="_blank" rel="noopener" class="socials__circle-link socials__circle-link-4"></a>
             <div class="socials__text">Общение с другими игроками!</div>
           </div>
         </div>
@@ -219,7 +219,7 @@
               <div class="footer__contact-items">
                 <div class="footer__contact-item">
                   Email - partnership@fortisrp.ru </div>
-                <div class="footer__contact-item">VK - <a href="https://vk.com/dedushka_rutich">https://vk.com/dedushka_rutich</a></div>
+                <div class="footer__contact-item">VK - <a target="_blank" rel="noopener" href="https://vk.com/dedushka_rutich">https://vk.com/dedushka_rutich</a></div>
                 <div class="footer__contact-item">
                   Telegram - @Rutich</div>
               </div>
@@ -227,7 +227,7 @@
             <div class="footer__contact">
               <div class="footer__contact-title">Важное</div>
               <div class="footer__contact-items">
-                <a href="https://forum.fortisrp.ru/" class="footer__contact-item">
+                <a target="_blank" rel="noopener" href="https://forum.fortisrp.ru/" class="footer__contact-item">
                   Форум
                 </a>
               </div>
@@ -247,16 +247,16 @@
           <div class="footer__socials">
             <div class="footer__contact">
               <div class="footer__social-items">
-                <a href="https://discord.gg/6C9nZDt" class="social-link footer__social-item">
+                <a target="_blank" rel="noopener" href="https://discord.gg/6C9nZDt" class="social-link footer__social-item">
                   <img src="/images/discord2.png" alt="">
                 </a>
-                <a href="https://www.youtube.com/channel/UCXbi1k6SD4CTkQv7RYesSXg" class="social-link footer__social-item">
+                <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCXbi1k6SD4CTkQv7RYesSXg" class="social-link footer__social-item">
                   <img src="/images/youtube2.png" alt="">
                 </a>
-                <a href="https://vk.com/fortisrp" class="footer__social-item social-link">
+                <a target="_blank" rel="noopener" href="https://vk.com/fortisrp" class="footer__social-item social-link">
                   <img src="/images/vk2.png" alt="">
                 </a>
-                <a href="https://www.twitch.tv/fortis_role_play" class="footer__social-item social-link">
+                <a target="_blank" rel="noopener" href="https://www.twitch.tv/fortis_role_play" class="footer__social-item social-link">
                   <img src="/images/Twitch2.png" alt="">
                 </a>
               </div>
