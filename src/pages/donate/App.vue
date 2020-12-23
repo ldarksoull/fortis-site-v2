@@ -6,7 +6,7 @@
       <div class="circle donate-page-circle-3"></div>
       <div class="bandit-image"></div>
       <div class="donate-content">
-        <router-link class="btn-back donate-btn-back" to="/">Назад</router-link>
+        <a class="btn-back donate-btn-back" href="/">Назад</a>
         <div class="donate-block">
           <form class="donate-form">
             <div class="donate-form__title">ДОНАТ</div>

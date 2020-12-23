@@ -264,3 +264,99 @@
   </section>
 </div>
 </template>
+<style lang="scss">
+@font-face {
+  font-family: Roboto;
+  src: url('/fonts/Roboto.ttf');
+}
+.document-bg{
+  background-color: #3E3838;
+  background-image: url('/images/back.jpg');
+  background-repeat: no-repeat;
+  background-blend-mode: overlay  ;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.document{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+.document-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+  margin-bottom: 70px;
+}
+.document-logo{
+  position: absolute;
+  left: 0;
+  width: 150px;
+}
+.document-title{
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 42px;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 0 13%;
+}
+.document-content{
+  padding: 0 20px;
+}
+.document p{
+  font-family: "Roboto";
+  font-size: 24px;
+  line-height: 32px;
+  color: #FFFFFF;
+}
+.document p.bold{
+  font-weight: bold;
+  margin-top: 15px;
+}
+.document span.bold{
+  font-weight: bold;
+}
+.document a, .document a:visited{
+  color: #fff;
+  text-decoration: underline;
+}
+@media (max-width: 800px){
+  .document-title{
+    font-size: 30px;
+  }
+  .document-logo{
+    max-width: 100px;
+  }
+  .document p{
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+@media (max-width: 554px) {
+  .document-title{
+    font-size: 24px;
+  }
+  .document-logo{
+    max-width: 70px;
+  }
+  .document p{
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .document-header{
+    flex-direction: column;
+    position: relative;
+  }
+  .document-logo{
+    position: relative;
+    width: 150px;
+  }
+  .document{
+    padding-top: 30px;
+  }
+}
+</style>
