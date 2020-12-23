@@ -3,7 +3,7 @@
     <div class="circle lk-circle-1 lk-circle anim-delay-1"></div>
     <div class="circle lk-circle-2 lk-circle anim-delay-2"></div>
     <div class="circle lk-circle-3 lk-circle anim-delay-3"></div>
-    <a class="btn-back lk-quit" @click="exit()" href="#">Выйти</a>
+    <a class="btn-back lk-quit" href="/">Выйти</a>
     <div class="left">
       <div class="block info">
         <div class="info-avatar">
@@ -401,13 +401,8 @@ export default {
   },
   mounted(){
     this.fixOffset()
-    console.log(this.$refs.tableBody);
   },
   methods:{
-    exit(){
-      this.$router.back()
-      console.log('exit')
-    },
     openModal(e){
       if (e === 1) this.modal = 1;
       if (e === 2) this.modal = 2;

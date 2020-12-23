@@ -46,6 +46,11 @@ html,body {
 button{
   border: none;
 }
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .bold{
   font-family: "Century Gothic Bold";
 }
@@ -2585,6 +2590,84 @@ input:-internal-autofill-selected{
   padding-left: 10px;
   @media (max-width: 768px) {
     padding-left: 0;
+  }
+}
+
+.donate-modal{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 9999;
+  width: 1139px;
+  height: 494px;
+  background: linear-gradient(180deg, rgba(107, 60, 143, 0.5) 0%, rgba(127, 64, 177, 0) 100%), #402874;
+  border-radius: 20px;
+  @media(max-width: 1200px){
+    width: 95%;
+  }
+  @media(max-width: 768px){
+    height: 400px;
+  }
+  &--error{
+    height: 377px;
+    background: linear-gradient(180deg, rgba(107, 60, 143, 0.5) 0%, rgba(127, 64, 177, 0) 100%), #B53F3F;
+    @media(max-width: 768px){
+      height: 300px;
+    }
+  }
+  &__title{
+    font-family: "Century Gothic Bold";
+    font-size: 33px;
+    color: #FFFFFF;
+    padding-top: 46px;
+    padding-left: 51px;
+    margin-bottom: 60px;
+    @media(max-width: 768px){
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+  }
+  &__text{
+    font-family: "Century Gothic";
+    font-size: 26px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 32px;
+    padding: 0 51px;
+    @media(max-width: 768px){
+      padding: 0 20px;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+  }
+  &__info{
+    display: flex;
+    align-items: center;
+    background: rgba(57, 12, 92, 0.5);
+    height: 103px;
+    padding: 0 31px;
+    @media(max-width: 768px){
+      padding: 0 15px;
+    }
+  }
+  &__info-text{
+    font-family: "Century Gothic Bold";
+    font-size: 30px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 auto;
+    @media(max-width: 768px){
+      padding: 0 15px;
+      font-size: 22px;
+    }
+  }
+  &__info-icon{
+    @media(max-width: 768px){
+      width: 20px;
+    }
   }
 }
 

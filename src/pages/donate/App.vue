@@ -1,5 +1,37 @@
 <template>
   <div class="donate-page">
+    <transition name="fade">
+      <div class="modal-overlay" v-if="openModal" @click="closeModal()"></div>
+    </transition>
+    <transition name="fade">
+    <div class="donate-modal" v-if="openModal && modalPage === 'donatePending'">
+      <div href="#" class="modal-close" @click="closeModal()"></div>
+      <div class="donate-modal__title">Обработка доната</div>
+      <div class="donate-modal__text">Обрабатываем информацию о Вашем пожертвовании</div>
+      <div class="donate-modal__info">
+        <div class="donate-modal__info-icon"><img src="/images/clocks.png" alt="часики"></div>
+        <div class="donate-modal__info-text">Пожалуйста, ожидайте</div>
+        <div class="donate-modal__info-icon"><img src="/images/clocks.png" alt="часики"></div>
+      </div>
+    </div>
+    </transition>
+    <transition name="fade">
+    <div class="donate-modal" v-if="openModal && modalPage === 'donateAccess'">
+      <div href="#" class="modal-close" @click="closeModal()"></div>
+      <div class="donate-modal__title">Ваш донат принят!</div>
+      <div class="donate-modal__text">Игровую благодарность от нас Вы можете получить в игре:</div>
+      <div class="donate-modal__info">
+        <div class="donate-modal__info-text">“Меню персонажа” - “Донат”</div>
+      </div>
+    </div>
+    </transition>
+    <transition name="fade">
+    <div class="donate-modal donate-modal--error" v-if="openModal && modalPage === 'donateError'">
+      <div href="#" class="modal-close" @click="closeModal()"></div>
+      <div class="donate-modal__title">Ошибка!</div>
+      <div class="donate-modal__text">Возникла какая-то ошибка при Вашем донате, попробуйте ещё раз</div>
+    </div>
+    </transition>
     <div class="wrapper">
       <div class="circle donate-page-circle-1 anim-delay-1"></div>
       <div class="circle donate-page-circle-2 anim-delay-6"></div>
@@ -34,7 +66,7 @@
               <img class="donate-calc__icon" src="/images/exchange-icon.png" alt="">
               <div class="donate-calc__input-wrap">
                 <img class="donate-calc__input-type" src="/images/fortis-coin.png" alt="">
-                <input class="donate-calc__input" :value="r * 100" type="number">
+                <input class="donate-calc__input" :value="r ? r * 100 : null" readonly>
               </div>
             </div>
           </div>
@@ -63,6 +95,8 @@ export default {
       r: null,
       merchant_id: 6730,
       sign: "",
+      modalPage: null,
+      openModal: false,
     };
   },
   mounted() {
@@ -100,11 +134,25 @@ export default {
         }
       })();*/
     };
-
     const form = document.forms.payment;
     form.addEventListener("submit", handleFormSubmit);
     form.pay_id.value = getRandomInt(100000000000000, 999999999999999);
   },
+  methods:{
+    showModal(modal) {
+      if (modal === 1) this.modalPage = "donatePending";
+      if (modal === 2) this.modalPage = "donateAccess";
+      if (modal === 3) this.modalPage = "donateError";
+      this.openModal = true;
+      document.documentElement.style.position = 'fixed'
+      document.documentElement.style.overflow = 'hidden'
+    },
+    closeModal() {
+      this.openModal = false;
+      document.documentElement.style.position = 'static'
+      document.documentElement.style.overflow = 'auto'
+    },
+  }
 };
 function getRandomInt(min, max) {
   return min + Math.floor(Math.random() * (max - min + 1));
