@@ -8,11 +8,14 @@
       <div class="donate-content">
         <a class="btn-back donate-btn-back" href="/">Назад</a>
         <div class="donate-block">
-          <form class="donate-form">
+          <form name="payment" method="POST" action="https://anypay.io/merchant" accept-charset='utf-8' class="donate-form">
             <div class="donate-form__title">ДОНАТ</div>
             <div class="donate-form__inputs">
               <input type="text" class="donate-form__input" placeholder="Введите ваш логин">
-              <input type="number" class="donate-form__input" placeholder="Введите сумму пожертвования">
+              <input type="number" name='amount' class="donate-form__input" placeholder="Введите сумму пожертвования">
+              <input type='hidden' name='merchant_id' :value="merchant_id">
+              <input type='hidden' name='pay_id'>
+              <input type='hidden' name='sign' :value="sign">
             </div>
             <button type="submit" class="button donate-form__button">
                 Перейти к оплате
@@ -54,11 +57,56 @@
 </template>
 <script>
 export default {
-  name: 'donate',
-  data(){
-    return{
-      r: null
-    }
+  name: "donate",
+  data() {
+    return {
+      r: null,
+      merchant_id: 6730,
+      sign: "",
+    };
   },
+  mounted() {
+    const handleFormSubmit = event => {
+      event.preventDefault();
+
+      /*const login = document.forms.payment.ik_x_login.value;
+      const errorDiv = document.querySelector(".text-error");
+      const donateBtn = document.querySelector(".donate-btn");
+      donateBtn.setAttribute("disabled", "disabled");
+      errorDiv.textContent = "";
+
+      (async () => {
+        try {
+          const rawResponse = await fetch("https://212.224.112.169:8081/loginCheck", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ login }),
+          });
+          if (rawResponse.status === 200) {
+            document.forms.payment.submit();
+          } else if (rawResponse.status === 429) {
+            errorDiv.textContent = "Произошла ошибка, слишком много запросов, попробуйте позже";
+          } else if (rawResponse.status === 203) {
+            errorDiv.textContent = "Произошла ошибка, аккаунт не найден";
+            donateBtn.removeAttribute("disabled");
+          }
+        } catch (e) {
+          console.error(e);
+          donateBtn.removeAttribute("disabled");
+          errorDiv.textContent = "Произошла ошибка, попробуйте позже";
+        }
+      })();*/
+    };
+
+    const form = document.forms.payment;
+    form.addEventListener("submit", handleFormSubmit);
+    form.pay_id.value = getRandomInt(100000000000000, 999999999999999);
+  },
+};
+function getRandomInt(min, max) {
+  return min + Math.floor(Math.random() * (max - min + 1));
 }
 </script>
