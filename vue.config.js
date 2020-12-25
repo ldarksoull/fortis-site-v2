@@ -1,4 +1,5 @@
 module.exports = {
+  lintOnSave: false,
   pages: {
     index: {
       entry: "./src/pages/mainpage/main.js",

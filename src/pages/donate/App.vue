@@ -29,7 +29,7 @@
     <div class="donate-modal donate-modal--error" v-if="openModal && modalPage === 'donateError'">
       <div href="#" class="modal-close" @click="closeModal()"></div>
       <div class="donate-modal__title">Ошибка!</div>
-      <div class="donate-modal__text">Возникла какая-то ошибка при Вашем донате, попробуйте ещё раз</div>
+      <div class="donate-modal__text">{{modalText}}</div>
     </div>
     </transition>
     <div class="wrapper">
@@ -43,11 +43,11 @@
           <form name="payment" method="POST" action="https://anypay.io/merchant" accept-charset='utf-8' class="donate-form">
             <div class="donate-form__title">ДОНАТ</div>
             <div class="donate-form__inputs">
-              <input type="text" class="donate-form__input" placeholder="Введите ваш логин">
+              <input type="text" name='login' class="donate-form__input" placeholder="Введите ваш логин">
               <input type="number" name='amount' class="donate-form__input" placeholder="Введите сумму пожертвования">
               <input type='hidden' name='merchant_id' :value="merchant_id">
               <input type='hidden' name='pay_id'>
-              <input type='hidden' name='sign' :value="sign">
+              <input type='hidden' name='sign'>
             </div>
             <button type="submit" class="button donate-form__button">
                 Перейти к оплате
@@ -94,65 +94,68 @@ export default {
     return {
       r: null,
       merchant_id: 6730,
-      sign: "",
       modalPage: null,
       openModal: false,
+      modalText: "",
     };
   },
   mounted() {
     const handleFormSubmit = event => {
       event.preventDefault();
-
-      /*const login = document.forms.payment.ik_x_login.value;
-      const errorDiv = document.querySelector(".text-error");
-      const donateBtn = document.querySelector(".donate-btn");
-      donateBtn.setAttribute("disabled", "disabled");
-      errorDiv.textContent = "";
+      const login = document.forms.payment.login.value;
+      const pay_id = document.forms.payment.pay_id.value;
+      const amount = document.forms.payment.amount.value;
+      if (!login) return this.showModal(3, "Введите логин");
+      if (!amount) return this.showModal(3, "Введите сумму");
 
       (async () => {
         try {
-          const rawResponse = await fetch("https://212.224.112.169:8081/loginCheck", {
+          const rawResponse = await fetch("https://fortis-rp.ru/loginCheck", {
             method: "POST",
             headers: {
               Accept: "application/json",
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ login }),
+            body: JSON.stringify({ login, pay_id, amount }),
           });
+
           if (rawResponse.status === 200) {
+            const sign = await rawResponse.text();
+            document.forms.payment.sign.value = sign;
             document.forms.payment.submit();
           } else if (rawResponse.status === 429) {
-            errorDiv.textContent = "Произошла ошибка, слишком много запросов, попробуйте позже";
+            this.showModal(3, "Произошла ошибка, слишком много запросов, попробуйте позже");
           } else if (rawResponse.status === 203) {
-            errorDiv.textContent = "Произошла ошибка, аккаунт не найден";
-            donateBtn.removeAttribute("disabled");
+            this.showModal(3, "Произошла ошибка, аккаунт не найден");
+          } else {
+            this.showModal(3, "Произошла ошибка, попробуйте позже");
           }
         } catch (e) {
           console.error(e);
-          donateBtn.removeAttribute("disabled");
-          errorDiv.textContent = "Произошла ошибка, попробуйте позже";
+          this.showModal(3, "Произошла ошибка, попробуйте позже");
         }
-      })();*/
+      })();
     };
     const form = document.forms.payment;
     form.addEventListener("submit", handleFormSubmit);
     form.pay_id.value = getRandomInt(100000000000000, 999999999999999);
   },
-  methods:{
-    showModal(modal) {
+  methods: {
+    showModal(modal, text = "") {
       if (modal === 1) this.modalPage = "donatePending";
       if (modal === 2) this.modalPage = "donateAccess";
       if (modal === 3) this.modalPage = "donateError";
+      this.modalText = text;
       this.openModal = true;
-      document.documentElement.style.position = 'fixed'
-      document.documentElement.style.overflow = 'hidden'
+      document.documentElement.style.position = "fixed";
+      document.documentElement.style.overflow = "hidden";
     },
     closeModal() {
       this.openModal = false;
-      document.documentElement.style.position = 'static'
-      document.documentElement.style.overflow = 'auto'
+      document.documentElement.style.position = "static";
+      document.documentElement.style.overflow = "auto";
     },
-  }
+  },
 };
 function getRandomInt(min, max) {
   return min + Math.floor(Math.random() * (max - min + 1));
