@@ -32,10 +32,9 @@
       <div class="donate-modal__text">{{modalText}}</div>
     </div>
     </transition>
-    <div class="wrapper">
-      <div class="circle donate-page-circle-1 anim-delay-1"></div>
-      <div class="circle donate-page-circle-2 anim-delay-6"></div>
-      <div class="circle donate-page-circle-3"></div>
+      <div class="circle-fixed circle donate-page-circle-1 anim-delay-1"></div>
+      <div class="circle-fixed circle donate-page-circle-2 anim-delay-6"></div>
+      <div class="circle-fixed circle donate-page-circle-3"></div>
       <div class="bandit-image"></div>
       <div class="donate-content">
         <a class="btn-back donate-btn-back" href="/">Назад</a>
@@ -85,7 +84,7 @@
         </div>
       </div>
     </div>
-  </div>
+
 </template>
 <script>
 export default {

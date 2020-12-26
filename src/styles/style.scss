@@ -338,7 +338,7 @@ button{
   transform: translate(50%, 50%);
   z-index: 2;
 }
-@media(max-width: 768px){
+@media(max-width: 1366px){
   .circle--1{
     width: 160px;
     height: 160px;
@@ -419,18 +419,43 @@ button{
   line-height: 0.92;
   -webkit-text-stroke: 1px rgba(105, 74, 129, 0.705);
 }
-@media(max-width: 1000px){
+@media (max-width: 1600px){
+  .name{
+    top: 12vh;
+  }
+  .name-main, .name-main--blured{
+    font-size: 240px;
+  }
+  .name-sub{
+    font-size: 140px;
+  }
+  .name-stroked{
+    font-size: 320px;
+  }
+}
+@media(max-width: 1366px){
   .name{
     top: 15vh;
   }
   .name-main, .name-main--blured{
+    font-size: 180px;
+  }
+  .name-sub{
+    font-size: 100px;
+  }
+  .name-stroked{
+    font-size: 240px;
+  }
+}
+@media(max-width: 1200px){
+  .name-main, .name-main--blured{
     font-size: 150px;
   }
   .name-sub{
-    font-size: 92px;
+    font-size: 86px;
   }
   .name-stroked{
-    font-size: 210px;
+    font-size: 200px;
   }
 }
 @media(max-width: 768px){
@@ -532,7 +557,7 @@ button{
   margin: 0 auto;
   color: #FFFFFF;
 }
-@media(max-width: 1000px){
+@media(max-width: 1365px){
   .monitoring{
     left: 50%;
     transform: translateX(-50%);
@@ -614,6 +639,11 @@ button{
   background-image: url('/images/discord.png');
   left: calc(100% + 100px);
   bottom: -40%;
+}
+@media (max-width: 1600px){
+  .buttons{
+    bottom: 23%;
+  }
 }
 @media(max-width: 1430px){
   .buttons{
@@ -724,30 +754,41 @@ img{
 }
 .about-us__text{
   font-family: "Century Gothic Bold";
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 1.5em;
+  line-height: 2em;
   color: #FFFEFE;
   padding: 0 60px;
   position: relative;
-  z-index: 100;
+  z-index: 1001;
 }
-@media(max-width: 900px){
+@media(max-width: 1366px){
   .about-us__side{
-    width: 50%;
+    width: 40%;
     padding-top: 40px;
   }
   .about-us__title{
-    font-size: 56px;
-    line-height: 0.8;
+    font-size: 4em;
     background: none;
     padding: 0 10%;
     height: auto;
     padding-bottom: 30px;
   }
   .about-us__text{
-    font-size: 16px;
+    font-size: 1.3em;
     line-height: 1.5;
     padding: 0 10%;
+  }
+}
+@media(max-width: 1200px){
+  .about-us__side{
+    width: 50%;
+  }
+  .about-us__title{
+    font-size: 3em;
+    padding-bottom: 30px;
+  }
+  .about-us__text{
+    font-size: 1em;
   }
 }
 @media(max-width: 600px){
@@ -833,6 +874,28 @@ img{
   left: 70%;
   top: 20%;
 }
+@media(max-width: 1366px){
+  .about-us__circle-1{
+    width: 200px;
+    height: 200px;
+  }
+  .about-us__circle-2{
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), rgba(255, 44, 44, 0.5);
+    opacity: 0.75;
+    left: 57%;
+    top: 15%;
+  }
+  .about-us__circle-4{
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), rgba(183, 95, 253, 0.5);
+    opacity: 0.75;
+    left: 70%;
+    top: 30%;
+  }
+}
 @media(max-width: 900px){
   .about-us__circle-1,.about-us__circle-3{
     display: none;
@@ -864,6 +927,16 @@ img{
   bottom: 0;
   left: 0;
   z-index: 1;
+  height: 100%;
+  max-width: 700px;
+  display: flex;
+    align-items: flex-end;
+  img{
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 }
 .howtostart__title{
   position: relative;
@@ -874,7 +947,11 @@ img{
   z-index: 2;
   padding-left: 365px;
   padding-top: 50px;
-  @media(max-width: 1360px){
+  @media (max-width: 1600px){
+    font-size: 4em;
+    padding-top: 30px;
+  }
+  @media(max-width: 1200px){
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 30px;
@@ -902,13 +979,16 @@ img{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media(max-width: 1360px){
+  @media(max-width: 1200px){
     padding: 0 30px;
     align-items: flex-end;
     margin-left: 0;
+    margin-right: 50px;
   }
   @media(max-width: 1000px){
     align-items: center;
+    margin: 0;
+    margin-top: 15px;
   }
 }
 .howtostart__step{
@@ -919,6 +999,16 @@ img{
   margin-bottom: 30px;
   padding: 20px 35px;
   font-family: "Century Gothic";
+  @media (max-width: 1600px){
+    padding: 15px 30px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 1366px){
+    width: 500px;
+    padding: 15px 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
   @media(max-width: 768px){
     width: 100%;
     margin-bottom: 20px;
@@ -941,9 +1031,16 @@ img{
   font-size: 36px;
   color: #FFFFFF;
   margin-bottom: 20px;
+  @media (max-width: 1600px){
+    font-size: 1.75em;
+    margin-bottom: 10px;
+  }
+  @media (max-width: 1366px){
+    font-size: 1.5em;
+    margin-bottom: 5px;
+  }
   @media(max-width: 768px){
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 1.5em;
   }
   @media(max-width: 600px){
     font-size: 20px;
@@ -956,6 +1053,10 @@ img{
   color: #FFFFFF;
   text-align: center;
   margin-bottom: 30px;
+  @media (max-width: 1366px){
+    font-size: 1.15em;
+    margin-bottom: 15px;
+  }
   @media(max-width: 768px){
     font-size: 18px;
     margin-bottom: 20px;
@@ -999,6 +1100,12 @@ img{
   align-items: center;
   color: #FFFFFF;
   text-align: center;
+}
+@media (max-width: 1366px){
+  .howtostart__step-button, .howtostart__step-ip{
+    font-size: 1em;
+    height: 2.5em;
+  }
 }
 @media(max-width: 768px){
   .howtostart__step-button, .howtostart__step-ip{
@@ -1106,11 +1213,17 @@ img{
   @media (max-width: 1920px){
     font-size: 4.69vw;
   }
+  @media (max-width: 1600px){
+    font-size: 4em;
+    margin-top: 30px;
+  }
+  @media (max-width: 1366px){
+    font-size: 4em;
+  }
   @media (max-width: 1000px){
-    font-size: 60px;
+    font-size: 3em;
     text-align: center;
     margin-left: 0;
-    margin-top: 30px;
     padding: 0 30px;
   }
   @media (max-width: 768px){
@@ -1146,6 +1259,11 @@ img{
     width: 10.83vw;
     height: 10.83vw;
   }
+  @media (max-width: 1366px){
+    width: 130px;
+    min-width: 130px;
+    height: 130px;
+  }
   @media (max-width: 1000px){
     width: 100px;
     min-width: 100px;
@@ -1173,6 +1291,9 @@ img{
   position: relative;
   width: 100%;
   margin-top: 50px;
+  @media (max-width: 1366px){
+    margin-top: 25px;
+  }
   @media (max-width: 1000px){
     flex-direction: column;
     padding: 0 30px;
@@ -1202,6 +1323,9 @@ img{
   margin-top: 50px;
   @media (max-width: 1920px){
     font-size: 1.56vw;
+  }
+  @media (max-width: 1366px){
+    margin-top: 20px;
   }
   @media (max-width: 1000px){
     margin: 0;
@@ -1244,6 +1368,11 @@ img{
 .socials__block-4{
   left: 69%;
   top: 200px;
+}
+@media (max-width: 1366px){
+  .socials__block-2, .socials__block-4{
+    top: 100px;
+  }
 }
 @media (max-width: 1000px){
   .socials__block{
@@ -1343,36 +1472,20 @@ a{
   color: inherit;
 }
 .donate-page{
-  overflow: hidden;
-  width: 100%;
-  height: 100vh;
   margin: 0;
   padding: 0;
-  @media (max-width: 768px){
-    height: auto;
-    overflow: visible;
-    // overflow-x: hidden;
-  }
-}
-.donate-page .wrapper{
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background-color: #1B0F34;
   background-image: linear-gradient(180deg, rgba(107, 60, 143, 0.5) 0%, rgba(127, 64, 177, 0) 100%) ,
                     url('/images/money-bg.png');
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  overflow: hidden;
   @media (max-width: 768px){
     display: flex;
     justify-content: center;
-    height: auto;
-    min-height: 100vh;
-    background-image: linear-gradient(180deg, rgba(107, 60, 143, 0.5) 0%, rgba(127, 64, 177, 0) 100%) ,
-    url('/images/money-bg.png');
-    background-size: cover, cover;
-    background-position: center;
   }
 }
 .bandit-image{
@@ -1383,11 +1496,13 @@ a{
   background-size: contain;
   background-position: left bottom;
   z-index: 3;
-  position: absolute;
   bottom: 0;
   @media (max-width: 768px){
     display: none;
   }
+}
+.circle-fixed{
+  position: fixed;
 }
 .donate-page-circle-1{
   width: 300px;
@@ -1433,26 +1548,21 @@ a{
 }
 .donate-content{
   z-index: 100;
-  position: absolute;
-  right: 90px;
-  top: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px 40px;
   @media (max-width: 768px){
-    position: static;
     margin: 0 auto;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    padding-bottom: 20px;
+    padding: 10px 15px;
   }
 
 }
 .donate-btn-back{
   margin-left: auto;
-  margin-bottom: 20px;
-  @media (max-width: 768px){
-    margin-right: 30px;
-  }
+  margin-bottom: 10px;
 }
 .donate-block{
   width: 645px;
@@ -1461,7 +1571,7 @@ a{
   border-radius: 20px;
   padding: 25px 50px;
   @media (max-width: 768px){
-    width: 90%;
+    width: 100%;
   }
   @media (max-width: 600px){
     padding: 20px 30px;
