@@ -292,7 +292,7 @@ export default {
       load: true,
       curIndex: 0,
       playersOnline: 0,
-      serverIp: "fortis-rp.ru:22005",
+      serverIp: "37.230.228.172:22005",
       opts: {
         start: 0,
         dir: "v",
