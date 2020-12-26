@@ -241,7 +241,7 @@
                 <a href="/policy" class="footer__contact-item">
                   Политика конфиденциальности
                 </a>
-                <a href="/contact" class="footer__contact-item">
+                <a href="/contract" class="footer__contact-item">
                   Пользовательское соглашение
                 </a>
               </div>

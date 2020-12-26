@@ -16,8 +16,8 @@ module.exports = {
       filename: "lk.html",
       title: "Fortis roleplay",
     },
-    contact: {
-      entry: "./src/pages/contact/main.js",
+    contract: {
+      entry: "./src/pages/contract/main.js",
       filename: "contract.html",
       title: "Fortis roleplay",
     },
