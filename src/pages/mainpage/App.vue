@@ -186,7 +186,7 @@
           <div class="howtostart__step animate__animated" v-animate="{ value: 'animate__bounceInRight', delay: 600 }">
             <div class="howtostart__step-name">Шаг 3</div>
             <div class="howtostart__step-text">Ввести IP нашего сервера</div>
-            <div class="howtostart__step-ip">{{ serverIp }}</div>
+            <div class="howtostart__step-ip">{{ domenName }}</div>
           </div>
         </div>
       </div>
@@ -293,6 +293,7 @@ export default {
       curIndex: 0,
       playersOnline: 0,
       serverIp: "37.230.228.172:22005",
+      domenName: "fortis-rp.ru:22005",
       opts: {
         start: 0,
         dir: "v",
