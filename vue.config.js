@@ -18,7 +18,7 @@ module.exports = {
     },
     contact: {
       entry: "./src/pages/contact/main.js",
-      filename: "contact.html",
+      filename: "contract.html",
       title: "Fortis roleplay",
     },
     policy: {
