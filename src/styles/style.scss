@@ -1570,6 +1570,7 @@ a{
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   padding: 25px 50px;
+  position: relative;
   @media (max-width: 768px){
     width: 100%;
   }
@@ -1698,6 +1699,71 @@ a{
   left: 10px;
   top: 49.5%;
   transform: translateY(-50%);
+}
+.donate-calc__input-icon{
+  margin-left: 3px;
+  color: #fff;
+}
+.donate-help{
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 25px;
+  height: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  animation-name: migaet;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transition: 0.4s;
+  cursor: pointer;
+  &:hover{
+    animation-duration: 0s;
+  }
+  @media(max-width: 470px){
+    top: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+  }
+}
+@keyframes migaet{
+  0%{
+    border: 1px solid rgb(138, 138, 138);
+    color: #fff;
+  }
+  100%{
+    border: 1px solid rgb(199, 199, 199);
+  }
+}
+.donate-help:hover::after{
+  opacity: 1;
+}
+.donate-help::after{
+  pointer-events: none;
+  transition: 0.2s;
+  opacity: 0;
+  transform: translateX(-100%);
+  width: 450px;
+  padding: 1em;
+  border-radius: 10px;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: -10px;
+  color: rgb(247, 218, 218);
+  font-weight: bold;
+  background: linear-gradient(180deg, rgba(159, 73, 224, 0.5) 0%, rgba(127, 64, 177, 0) 100%), #362065;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  @media(max-width: 470px){
+    width: 250px;
+  }
 }
 .donate-info{
   margin-top: 20px;

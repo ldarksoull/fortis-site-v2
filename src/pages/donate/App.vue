@@ -39,6 +39,7 @@
       <div class="donate-content">
         <a class="btn-back donate-btn-back" href="/">Назад</a>
         <div class="donate-block">
+          <div class="donate-help" data-text="Если вы испытываете проблемы с донатом обращайтесь в дискорд - Дедушка Рутич#2887">?</div>
           <form name="payment" method="POST" action="https://anypay.io/merchant" accept-charset='utf-8' class="donate-form">
             <div class="donate-form__title">ДОНАТ</div>
             <div class="donate-form__inputs">
@@ -64,7 +65,7 @@
               </div>
               <img class="donate-calc__icon" src="/images/exchange-icon.png" alt="">
               <div class="donate-calc__input-wrap">
-                <img class="donate-calc__input-type" src="/images/fortis-coin.png" alt="">
+                <div class="donate-calc__input-type donate-calc__input-icon">$</div>
                 <input class="donate-calc__input" :value="r ? r * 100 : null" readonly>
               </div>
             </div>
