@@ -96,10 +96,10 @@
           <a class="menu-link" @click="moveTo(1)" href="#">О нас</a>
           <a class="menu-link" target="_blank" rel="noopener" href="https://forum.fortisrp.ru/">Форум</a>
           <a class="menu-link" href="/donate">Донат</a>
-          <!-- <a class="menu-link menu-link-lk--mob" href="#" @click="showModal(1)">Личный кабинет</a>
+          <a class="menu-link menu-link-lk--mob" href="#" @click="showModal(1)">Личный кабинет</a>
           <a class="menu-link-lk" href="#" @click="showModal(1)">
             <img class="menu-link-lk-icon" src="/images/lk.png" alt="" />
-          </a> -->
+          </a>
         </nav>
         <div class="girl animate__animated" v-animate="{ value: 'animate__fadeIn', delay: 400 }"></div>
         <h1 class="name">

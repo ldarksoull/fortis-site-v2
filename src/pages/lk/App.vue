@@ -116,18 +116,6 @@
                 <div class="personal-auto-name">-Bravado Buffalo</div>
                 <div>Налог в неделю: <span>нет</span></div>
               </div>
-              <div class="personal-item-stat" :class="{ inactive: !carSlot4 }">
-                <div class="personal-auto-name">Свободное место</div>
-                <div>Налог в неделю: <span>нет</span></div>
-              </div>
-              <div class="personal-item-stat" :class="{ inactive: !carSlot5 }">
-                <div class="personal-auto-name">Свободное место</div>
-                <div>Налог в неделю: <span>нет</span></div>
-              </div>
-              <div class="personal-item-stat" :class="{ inactive: !carSlot6 }">
-                <div class="personal-auto-name">Свободное место</div>
-                <div>Налог в неделю: <span>нет</span></div>
-              </div>
             </div>
           </div>
         </div>

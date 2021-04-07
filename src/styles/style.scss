@@ -2759,7 +2759,9 @@ input:-internal-autofill-selected{
   }
 }
 .table-col{
-  padding-left: 10px;
+  &:first-child{
+    padding-left: 10px;
+  }
   @media (max-width: 768px) {
     padding-left: 0;
   }
